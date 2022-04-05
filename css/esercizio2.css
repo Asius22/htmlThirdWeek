@@ -1,0 +1,68 @@
+footer {
+    background: black;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: auto;
+}
+
+.container {
+    align-items: center;
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+}
+
+.top-btn {
+    border-radius: 20px;
+    color: antiquewhite;
+    text-size-adjust: 20px;
+    bottom: 0;
+    right: 0;
+    position: absolute;
+}
+
+.top-btn a {
+    padding: 5px;
+    color: black;
+    font-size: 20px;
+}
+
+.item {
+    flex: 1 1 auto;
+    margin: 20px;
+    text-align: center;
+    display: flex;
+}
+
+a {
+    color: white;
+}
+
+li {
+    text-decoration-color: aliceblue;
+    color: aliceblue;
+    box-decoration-break: slice;
+}
+
+table {
+    align-self: center;
+    position: absolute;
+    border: 2px solid;
+    border-color: black;
+    left: 40%;
+    top: 25%;
+    right: 25%;
+}
+
+td,
+th {
+    border: 1px solid;
+    align-items: center;
+    text-align: center;
+    padding: 10px;
+}
+
+h1 {
+    text-align: center;
+}

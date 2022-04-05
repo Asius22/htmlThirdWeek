@@ -1,0 +1,20 @@
+h1 {
+    background-color: blue;
+}
+
+div {
+    background-color: beige;
+    color: aquamarine;
+}
+
+body {
+    background-color: rgba(0, 0, 0, 0.658);
+    color: aliceblue;
+}
+
+.second {
+    color: whitesmoke;
+    margin: 50px;
+    padding: 20px;
+    width: 100em;
+}
