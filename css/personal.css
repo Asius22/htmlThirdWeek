@@ -1,0 +1,72 @@
+img {
+    border-radius: 8px;
+    width: 200px;
+    height: auto;
+    margin: 6px;
+}
+
+body {
+    background-color: antiquewhite;
+    color: black;
+}
+
+section {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin: 20px;
+}
+
+h1,
+p {
+    display: block;
+    margin: 10px;
+    padding: 4px;
+}
+
+li {
+    font-weight: 500;
+}
+
+fieldset {
+    border-radius: 10px;
+    border: 3px solid;
+    display: flexbox;
+    flex-wrap: wrap;
+    width: fit-content;
+    padding: 20px;
+    position: relative;
+    margin: 0 auto;
+}
+
+legend {
+    font-weight: 600;
+    font-size: medium;
+}
+
+label {
+    font-size: medium;
+    font-weight: bold;
+}
+
+input {
+    display: block;
+    border: none;
+    border-bottom: 1px solid black;
+    padding: 8px;
+    background-color: none;
+}
+
+input:focus,
+input::selection,
+input:active {
+    border: none;
+    overflow: none;
+}
+
+#submit {
+    margin: 10px;
+    border: 1px solid black;
+    border-radius: 4px;
+    padding: 4px;
+}
