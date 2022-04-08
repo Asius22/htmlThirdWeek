@@ -1,5 +1,24 @@
 {
-  "dependencies": {
-    "@babel/plugin-transform-modules-commonjs": "^7.17.9"
-  }
+    "name": "htmlthirdweek",
+    "description": "",
+    "version": "1.0.0",
+    "main": "index.js",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/Asius22/htmlThirdWeek.git"
+    },
+    "author": "Ciro Malafornte",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/Asius22/htmlThirdWeek/issues"
+    },
+    "homepage": "https://github.com/Asius22/htmlThirdWeek#readme",
+    "scripts": {
+        "start": "echo ciao",
+        "clear": "rm -rf ./typescript/*.js ",
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "devDependencies": {
+        "lodash": "^4.17.21"
+    }
 }
