@@ -1,74 +1,85 @@
-
 enum FIGURA {
     QUADRATO, RETTANGOLO, TRIANGOLO
 }
-class SimpleMath {       
-    public areaQuadrato(figura: FIGURA, obj: FiguraGeometrica): number {
-        if (figura == FIGURA.QUADRATO)
-            return obj.getBase() * obj.getBase();
-        return -1;
-    }
 
-    public perimetroQuadrato(figura: FIGURA, obj: FiguraGeometrica): number {
-        if (figura == FIGURA.QUADRATO)
-            return obj.getBase() * 4;
-        return -1;
-    }
-
-    public areaRettangolo(figura: FIGURA, obj: FiguraGeometrica): number {
-        if (figura == FIGURA.RETTANGOLO)
-            return obj.getBase() * obj.getAltezza();
-        return -1;
-    }
-
-    public perimetroRettangolo(figura: FIGURA, obj: FiguraGeometrica): number {
-        if (figura == FIGURA.RETTANGOLO)
-            return (obj.getBase() + obj.getAltezza()) * 2;
-        return -1;
-    }
-    
-    public areaTriangolo(figura: FIGURA, obj: FiguraGeometrica): number {
-        if (figura == FIGURA.TRIANGOLO)
-            return obj.getBase() * obj.getAltezza();
-        return -1;
-    }
-
-    public perimetroTriangolo(figura: FIGURA, obj: FiguraGeometrica): number {
-        if (figura == FIGURA.TRIANGOLO)
-            return obj.getBase() * 3;
-        return -1;
-    }    
+export interface SimpleMath {       
+   calcolaArea() : number;
+   calcolaPerimetro() : number;
 }
 
-class FiguraGeometrica {
-    private altezza: number;
-    private base: number;
-    private figura : FIGURA;
-    constructor(base: number, altezza: number, figura : FIGURA) {
-        this.base = base;
-        this.altezza = altezza;
+export abstract class FiguraGeometrica implements SimpleMath{
+    protected figura : FIGURA;
+    constructor(figura : FIGURA) {
         this.figura = figura;
     }
-
-    public getBase(): number {
-        return this.base;
-    }
-
-    public getAltezza(): number {
-        return this.altezza;
-    }
-
-    public setBase(base : number) {
-        this.base = base;
-    }
-
-    public setAltezza(altezza : number) {
-         this.altezza = altezza;
-    }
-
+    abstract calcolaArea(): number
+    abstract calcolaPerimetro(): number 
+    
     public getFigura() : FIGURA {
         return this.figura;
     }
+
+    public setFigura (figura : FIGURA){
+        this.figura = figura
+    }
 }
 
-export {FIGURA, FiguraGeometrica, SimpleMath}
+export class Quadrato extends FiguraGeometrica {
+
+    private lato : number;
+
+    constructor(lato : number){
+        super(FIGURA.QUADRATO)
+        this.lato = lato;
+    }
+
+    calcolaArea(): number {
+        return this.lato * this.lato;
+    }
+
+    calcolaPerimetro(): number {
+        return this.lato * 4;
+    }
+
+}
+
+export class Triangolo extends FiguraGeometrica {
+
+    private base : number;
+    private altezza : number;
+
+    constructor(altezza : number, base : number){
+        super(FIGURA.TRIANGOLO)
+        this.base = base;
+        this.altezza = altezza;
+    }
+
+    calcolaArea(): number {
+        return (this.base * this.altezza) / 2;
+    }
+
+    calcolaPerimetro(): number {
+        return this.base * 3;
+    }
+}
+
+export class Rettangolo extends FiguraGeometrica {
+
+    private base : number;
+    private altezza : number;
+
+    constructor(altezza : number, base : number){
+        super(FIGURA.RETTANGOLO)
+        this.base = base;
+        this.altezza = altezza;
+    }
+
+    calcolaArea(): number {
+        return (this.base * this.altezza);
+    }
+
+    calcolaPerimetro(): number {
+        return (this.base + this.altezza) + 2;
+    }
+
+}
